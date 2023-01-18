@@ -1,0 +1,217 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap');
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, a, p
+{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+h1
+{
+    font-size: 5vw;
+    font-family: 'Playfair Display', serif;
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+    transition: all 500ms ease;
+}
+
+h1::before
+{
+    transition: all 500ms ease;
+    position: absolute;
+    content: "";
+    width: 0%;
+    height: 5vw;
+    background-color: #ffffff;
+    z-index: -1;
+}
+
+h1:hover::before
+{
+    width: 100%;
+}
+
+h1:hover
+{
+    color: #000000;
+}
+
+:root
+{
+    --accent-color: #95b9e7;
+}
+
+body
+{
+    background-color: #000000;
+    font-family: 'Open Sans', sans-serif;
+}
+
+nav {
+    position: fixed;
+    background: #0a0a02;
+    width: 100%;
+}
+
+nav .container {
+    padding: 1rem;
+}
+
+.container .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+
+nav ul li {
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+
+li a {
+    position: relative;
+}
+
+li a::after
+{
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color);
+  height: 3px;
+  width: 0;
+  left: 0;
+  bottom: -0.5rem;
+  transition: all ease 500ms;
+}
+
+
+li a:hover::after,
+li a.active::after
+{
+  width: 100%;
+}
+
+#logo {
+    height: 2rem;
+    float: left;
+    margin-right: 0.5rem;
+}
+
+.btn {
+    background-color: #ffffff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: all 300ms ease;
+}
+
+.btn a {
+    color: #000000;
+    font-size: 1rem;
+}
+
+.btn:hover {
+    background-color: var(--accent-color);
+    cursor: pointer;
+}
+
+.section-landing {
+    width: 100%;
+    height: 100vh;
+    background-image: url("https://www.denmo.social/hosted/images/9e/1dc3e4323a4e7fbceb9f208a01f570/wallpapergirls-netflix-style-black-fade2.png");
+    background-size: cover;
+    /* background-attachment: fixed; */
+}
+
+.hero
+{
+  position: absolute;
+  width: 40%;
+  margin-left: 10vw;
+  bottom: 0;
+}
+
+.text-container {
+    position: absolute;
+    width: 40%;
+    margin: 20vh 10vw 0 auto;
+    left: 0;
+    right: 0;
+    z-index: 1;
+}
+
+.paragraph
+{
+    font-size: 1.2vw;
+}
+
+.modal
+{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  padding-top: 100px;
+  overflow: auto;
+  opacity: 0;
+  pointer-events: none;
+  backdrop-filter: blur(10px);
+  transition: all 300ms ease;
+}
+
+.modal.open
+{
+  opacity: 1;
+  pointer-events: all;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .container {
+        max-width: 1380px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .container {
+        max-width: 1520px;
+    }
+}
